@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Trip Planner</title>
-    <link rel="stylesheet" href="./style.css"></link>
-    <script src="./bundle.js" defer></script>
-  </head>
-  <body>
-    <div id="map"></div>
-  </body>
+
+<head>
+  <title>Trip Planner</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css"></link>
+  <script src="./bundle.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class='logo'>
+        <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+        <span id='logo-title'>Bon Voyage</span>
+    </div>
+
+    <nav>
+      <ul class='home-nav'>
+        <li class='nav-buttons'>About</li>
+        <li class='nav-buttons'>Team</li>
+        <li class='nav-buttons'>Contact</li>
+      </ul>
+    </nav>
+
+
+  </header>
+
+  <div class = 'sidebar'>
+      <div class='sub-sidebar'>
+        <ul class='sub-sidebar-ul'>
+          <li class='sub-sidebar-li'>
+              <i class="fa fa-bed" aria-hidden="true"></i>
+            <strong>Hotels</strong>
+            <div class='selectors'>
+            <select>
+              <option value="Hotel 1">Ritz-Carlton</option>
+              <option value="Hotel 2">Hilton</option>
+            </select>
+            <i class="fa fa-plus-circle plus" aria-hidden="true"></i>
+            </div>
+          </li>
+
+          <li class='sub-sidebar-li'>
+              <i class="fa fa-cutlery" aria-hidden="true"></i>
+           <strong>Restaurants</strong>
+           <div class='selectors'>
+            <select>
+              <option value="Restaurant 1">Restaurant 1</option>
+              <option value="Restaurant 2">Restaurant 2</option>
+            </select>
+            <i class="fa fa-plus-circle plus" aria-hidden="true"></i>
+           </div>
+          </li>
+
+          <li class='sub-sidebar-li'>
+              <i class="fa fa-child" aria-hidden="true"></i>
+            <strong>Activities</strong>
+            <div class='selectors'>
+            <select>
+              <option value="Activities 1">Activities 1</option>
+              <option value="Activities 2">Activities 2</option>
+            </select>
+            <i class="fa fa-plus-circle plus" aria-hidden="true"></i>
+          </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class='sub-sidebar'>
+        <div class='category'>
+          <div class='category-title'>My Hotels</div>
+            <ul class='category-labels'>
+              <li class='labels'>Hotel 1 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+              <li class='labels'>Hotel 2 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+              <li class='labels'>Hotel 1 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+              <li class='labels'>Hotel 2 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+        <div class='category'>
+          <div class='category-title'>My Restaurants</div>
+          <ul class='category-labels'>
+              <li class='labels'>Restaurant 1 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+              <li class='labels'>Restaurant 2 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+        <div class='category'>
+          <div class='category-title'>My Activities</div>
+          <ul class='category-labels'>
+              <li class='labels'>Activity 1 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+              <li class='labels'>Activity 2 <i class="fa fa-times-circle" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+      </div>
+  </div>
+
+
+  <div id="map"></div>
+</body>
+
 </html>
