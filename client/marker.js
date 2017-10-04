@@ -5,11 +5,11 @@ function markerFactory (type, longlat) {
   marker.style.width = "32px";
   marker.style.height = "39px";
 
-  if (type === 'activity') {
+  if (type === 'activities') {
     marker.style.backgroundImage = 'url(http://i.imgur.com/WbMOfMl.png)';
-  } else if (type === 'hotel') {
+  } else if (type === 'hotels') {
     marker.style.backgroundImage = 'url(http://i.imgur.com/D9574Cu.png)';
-  } else if (type === 'restaurant') {
+  } else if (type === 'restaurants') {
     marker.style.backgroundImage = 'url(http://i.imgur.com/cqR6pUI.png)';
   }
 

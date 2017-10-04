@@ -10,13 +10,14 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v10' // mapbox has lots of different map styles available.
 });
 
-var data;
+let allData;
 fetch('/api')
   .then(result => result.json())
   .then(data => {
-    const hotelSelector = document.getElementById('hotel-selector');
-    const restaurantSelector = document.getElementById('restaurant-selector');
-    const activitySelector = document.getElementById('activity-selector');
+    allData = data;
+    const hotelSelector = document.getElementById('hotels-selector');
+    const restaurantSelector = document.getElementById('restaurants-selector');
+    const activitySelector = document.getElementById('activities-selector');
 
     data.hotels.forEach(hotel => {
       let option = document.createElement('option');
@@ -41,17 +42,20 @@ fetch('/api')
   })
   .catch(console.error);
 
-document.getElementById('hotel-add').addEventListener('click', (e) => {
+
+document.getElementById('hotels-add').addEventListener('click', addItinerary);
+document.getElementById('restaurants-add').addEventListener('click', addItinerary);
+document.getElementById('activities-add').addEventListener('click', addItinerary);
+
+function addItinerary (e) {
   const type = e.target.id.split('-')[0] //restaurant
-  const selector = document.getElementById(type + '-selector')
-  console.log(selector.options[selector.selectedIndex].value); //id of hotel
+  const selector = document.getElementById(type + '-selector');
+  const retrievedPlace = allData[type].filter(function (place) {
+    return place.id == selector.options[selector.selectedIndex].value;
+  })[0];
+  const marker = buildMarker(type, retrievedPlace.place.location);
+  marker.addTo(map);
+}
 
-
-});
-document.getElementById('restaurant-add');
-document.getElementById('activity-add');
-
-function addItinerary () {}
-
-const marker = buildMarker('activity', [-74.009151, 40.705086]);
+const marker = buildMarker('activities', [-74.009151, 40.705086]);
 marker.addTo(map);
